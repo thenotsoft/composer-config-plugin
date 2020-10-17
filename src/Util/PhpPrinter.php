@@ -131,7 +131,8 @@ class PhpPrinter extends Standard
     /**
      * XXX could these methods be converted to protected in php-parser?
      */
-    protected function my_pMaybeMultiline(array $nodes, bool $trailingComma = false) {
+    protected function my_pMaybeMultiline(array $nodes, bool $trailingComma = false)
+    {
         if (!$this->my_hasNodeWithComments($nodes)) {
             return $this->pCommaSeparated($nodes);
         } else {
@@ -139,7 +140,8 @@ class PhpPrinter extends Standard
         }
     }
 
-    protected function my_hasNodeWithComments(array $nodes) {
+    protected function my_hasNodeWithComments(array $nodes)
+    {
         foreach ($nodes as $node) {
             if ($node && $node->getComments()) {
                 return true;

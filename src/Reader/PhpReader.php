@@ -39,8 +39,8 @@ class PhpReader extends AbstractReader
         $result = static function (array $params) {
             return require func_get_arg(1);
         };
-                                  
-        return $result($params, $path);                                  
+
+        return $result($params, $path);
     }
 
 
@@ -54,7 +54,7 @@ class PhpReader extends AbstractReader
     protected function extractUses($ast)
     {
         /** @var Stmt $node */
-        foreach ($ast as $node){
+        foreach ($ast as $node) {
             if (isset($node->type) && $node->type == Use_::TYPE_NORMAL and !empty($node->uses)) {
                 foreach ($node->uses as $use) {
                     $className = end($use->name->parts);
